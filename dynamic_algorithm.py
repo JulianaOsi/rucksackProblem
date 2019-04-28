@@ -1,3 +1,5 @@
+import pandas as pd
+
 def dynamic(weights, prices, rucksack_weight):
     table = []
     prev_max = 0
@@ -19,9 +21,11 @@ def dynamic(weights, prices, rucksack_weight):
     return table
 
 
-prices = [1500, 3000, 2000]
-weights = [1, 4, 3]
-
-rucksack_weight = 4
+df = pd.read_csv('data20.csv', header=0, sep=';')
+print(df)
+prices = df['price']
+weights = df['weight']
+print(prices, weights)
+rucksack_weight = 1278
 
 print(dynamic(weights, prices, rucksack_weight))
