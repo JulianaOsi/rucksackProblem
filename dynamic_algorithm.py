@@ -19,20 +19,20 @@ def dynamic(weights, profits, capacity, size):
                 table[i].append(max(prev_max, profits[i] + another_price))
     return table
 
-df = pd.read_csv('data24.csv', sep=';')
+df = pd.read_csv('data15.csv', sep=';')
 #print(df)
 weights = df['weights']
 profits = df['profits']
 size = int(df['size'][:1])
 capacity = int(df['capacity'][:1])
-exp_result = int(df['result'][:1])
+exp_result = int(df['exp_result'][:1])
 
 #print(size)
 #print(capacity)
 #print(result)
 
 knapsack = dynamic(weights, profits, capacity, size)
-print(knapsack)
+#print(knapsack)
 
 result = knapsack[size - 1][capacity-1]
 col = capacity-1
@@ -47,8 +47,8 @@ for row in range(size-1, -1, -1):
         sum += profits[row]
         if sum == result:
             break
-
-print(packed)
+print('exp_result: {1}\nresult: {0}'.format(exp_result, result))
+print('packed item indexes: {0}'.format(packed))
 
 
 
