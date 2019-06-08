@@ -19,7 +19,7 @@ def dynamic(weights, profits, capacity, size):
                 table[i].append(max(prev_max, profits[i] + another_price))
     return table
 
-df = pd.read_csv('data15.csv', sep=';')
+df = pd.read_csv('data15.csv', sep=',')
 #print(df)
 weights = df['weights']
 profits = df['profits']
