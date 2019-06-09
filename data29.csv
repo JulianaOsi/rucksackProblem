@@ -1,4 +1,4 @@
-size,capacity,exp_result,weights,profits,selection
+size,capacity,exp_result,weights,values,selection
 29,1301,67619,206,9727,1
 ,,,227,2165,0
 ,,,87,1193,0
